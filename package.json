@@ -1,0 +1,22 @@
+{
+    "name": "myflix-client",
+    "version": "1.0.0",
+    "description": "myFlix-client",
+    "main": "src/index.html",
+    "scripts": {
+        "test": "myFlix-client"
+    },
+    "author": "Sam Ballew",
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sballew17/myFlix-client.git"
+    },
+    "keywords": [
+        "Client"
+    ],
+    "bugs": {
+        "url": "https://github.com/sballew17/myFlix-client/issues"
+    },
+    "homepage": "https://github.com/sballew17/myFlix-client#readme"
+}
