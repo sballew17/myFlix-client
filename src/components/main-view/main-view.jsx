@@ -1,6 +1,6 @@
 import React from 'react';
-import { MovieCard } from './myFlix-client/src/components/movie-card/movie-card';
-import { MovieView } from './myFlix-client/src/components/movie-view/movie-view';
+import { MovieCard } from './components/movie-card/movie-card';
+import { MovieView } from './components/movie-view/movie-view';
 
 export class MainView extends React.Component {
     constructor() {
