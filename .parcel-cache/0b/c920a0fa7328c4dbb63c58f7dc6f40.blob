@@ -1,0 +1,51 @@
+.LoginForm {
+  margin: auto;
+  max-width: 200px;
+  align-content: center;
+}
+
+.background {
+  color: gray;
+}
+.MovieCard {
+  text-align: center;
+}
+
+.background {
+  color: gray;
+}
+.MovieView {
+  text-align: center;
+}
+
+.background {
+  color: gray;
+}
+.RegForm {
+  margin: auto;
+  max-width: 250px;
+}
+
+.background {
+  color: gray;
+}
+.MainView {
+  text-align: center;
+}
+
+.background {
+  color: gray;
+}
+
+.movie-title {
+  padding: 5px;
+}
+
+.movie-description {
+  padding: 5px;
+}
+.my-flix {
+  color: steelblue;
+  font-family: "Source Code Pro", monospace;
+}
+/*# sourceMappingURL=index.HASH_REF_270c5bae47ae54229be97e2fc92e8645.css.map */

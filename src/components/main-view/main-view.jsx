@@ -8,7 +8,7 @@ import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { RegistrationView } from '../registration-view/registration-view';
 
-import '.main-view-scss';
+import './main-view.scss';
 
 export class MainView extends React.Component {
     constructor() {
@@ -44,7 +44,8 @@ export class MainView extends React.Component {
     }
 
     render() {
-        const { movies, selectedMovie } = this.state;
+        const { movies, user, selectedMovie } = this.state;
+
 
         if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
 

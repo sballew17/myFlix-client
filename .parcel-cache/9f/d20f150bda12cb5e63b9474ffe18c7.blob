@@ -1,0 +1,9 @@
+.LoginForm {
+  margin: auto;
+  max-width: 200px;
+  align-content: center;
+}
+
+.background {
+  color: gray;
+}

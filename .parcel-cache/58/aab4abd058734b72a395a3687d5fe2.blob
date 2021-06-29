@@ -1,0 +1,15 @@
+.MainView {
+  text-align: center;
+}
+
+.background {
+  color: gray;
+}
+
+.movie-title {
+  padding: 5px;
+}
+
+.movie-description {
+  padding: 5px;
+}
