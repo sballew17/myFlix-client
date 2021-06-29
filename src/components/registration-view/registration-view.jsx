@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-//import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
-//import PropTypes from 'prop-types';
 import './registration-view.scss';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
