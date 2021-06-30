@@ -21881,13 +21881,6 @@ class MainView extends _reactDefault.default.Component {
     constructor(){
         super();
         this.state = {
-            movies: [
-                {
-                    _id: 1,
-                    Title: 'Captian America',
-                    Description: 'redominantly set during WWII, the strong of heart Steve Rogers wants to fight Nazis. He becomes the first and only recipient of a super-soldier serum. It enhances his physical abilities to peak human condition. He uses this newfound strength as Captain America to battle the Red Skull — a Nazi scientist using the Tesseract for world domination. Rogers saves the day, but becomes frozen in ice and doesn’t thaw out until the modern day.'
-                }
-            ],
             selectedMovie: null,
             user: null
         };
@@ -21918,7 +21911,7 @@ class MainView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 52
+                lineNumber: 50
             },
             __self: this
         }));
@@ -21926,7 +21919,7 @@ class MainView extends _reactDefault.default.Component {
             class: "main-view",
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 54
+                lineNumber: 52
             },
             __self: this
         }));
@@ -21934,21 +21927,21 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 57
+                lineNumber: 55
             },
             __self: this
         }, selectedMovie ? /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             classname: "justify-content-md-center",
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 60
+                lineNumber: 58
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             md: 8,
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 61
+                lineNumber: 59
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_movieView.MovieView, {
@@ -21958,7 +21951,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 62
+                lineNumber: 60
             },
             __self: this
         }))) : movies.map((movie)=>/*#__PURE__*/ _reactDefault.default.createElement(_movieCard.MovieCard, {
@@ -21969,7 +21962,7 @@ class MainView extends _reactDefault.default.Component {
                 },
                 __source: {
                     fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                    lineNumber: 67
+                    lineNumber: 65
                 },
                 __self: this
             })
@@ -26411,4 +26404,4 @@ module.exports = exports["default"];
 
 },{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S"}],"5OqXI":[function() {},{}]},["1j6wU","5jWZF","7Cwbd"], "7Cwbd", "parcelRequire279c")
 
-//# sourceMappingURL=index.03a3058c.js.map
+//# sourceMappingURL=index.HASH_REF_670ea00ccb85e81929d4760603a3058c.js.map
