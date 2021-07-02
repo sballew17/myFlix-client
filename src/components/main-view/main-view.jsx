@@ -45,8 +45,12 @@ export class MainView extends React.Component {
     }
 
     render() {
+<<<<<<< Updated upstream
         const { movies, user, selectedMovie } = this.state;
 
+=======
+        const { movies, selectedMovie, user } = this.state;
+>>>>>>> Stashed changes
 
         if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
 
