@@ -1,23 +1,17 @@
 import React from 'react';
 import axios from 'axios';
-<<<<<<< Updated upstream
-=======
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
->>>>>>> Stashed changes
 
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
-<<<<<<< Updated upstream
-=======
 import { RegistrationView } from '../registration-view/registration-view';
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import './main-view.scss';
->>>>>>> Stashed changes
 
 export class MainView extends React.Component {
     constructor() {
@@ -70,10 +64,6 @@ export class MainView extends React.Component {
         this.getMovies(authData.token);
     }
 
-<<<<<<< Updated upstream
-    render() {
-        const { movies, selectedMovie } = this.state;
-=======
     onLoggedOut() {
         localStorage.removeItem('token');
         localStorage.removeItem('user');
@@ -84,7 +74,6 @@ export class MainView extends React.Component {
 
     render() {
         const { movies, user } = this.state;
->>>>>>> Stashed changes
 
 
         if (!user) return <Row>
@@ -95,16 +84,6 @@ export class MainView extends React.Component {
         if (movies.length === 0) return <div className="main-view" />;
 
         return (
-<<<<<<< Updated upstream
-            <div className="main-view">
-                {selectedMovie
-                    ? <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
-                    : movies.map(movie => (
-                        <MovieCard key={movie._id} movie={movie} onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }} />
-                    ))
-                }
-            </div>
-=======
             <Router>
                 <Row className="main-view justify-content-md-center">
                     <Route exact path="/" render={() => {
@@ -122,7 +101,6 @@ export class MainView extends React.Component {
 
                 </Row>
             </Router>
->>>>>>> Stashed changes
         );
     }
 }
