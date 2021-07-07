@@ -1,5 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+<<<<<<< Updated upstream
+=======
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+import './movie-card.scss';
+>>>>>>> Stashed changes
 
 export class MovieCard extends React.Component {
 

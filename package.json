@@ -23,7 +23,13 @@
         "axios": "^0.21.1",
         "prop-types": "^15.7.2",
         "react": "^17.0.2",
+<<<<<<< Updated upstream
         "react-dom": "^17.0.2"
+=======
+        "react-bootstrap": "^1.6.1",
+        "react-dom": "^17.0.2",
+        "react-router-dom": "^5.2.0"
+>>>>>>> Stashed changes
     },
     "devDependencies": {
         "@parcel/transformer-sass": "^2.0.0-beta.3.1"
