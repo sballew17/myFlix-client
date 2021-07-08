@@ -1,0 +1,239 @@
+var helpers = require("../../../../../../Users/Sam/AppData/Roaming/nvm/v14.16.1/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "RegistrationView", ()=>RegistrationView
+);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _form = require("react-bootstrap/Form");
+var _formDefault = parcelHelpers.interopDefault(_form);
+var _button = require("react-bootstrap/Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _registrationViewScss = require("./registration-view.scss");
+var _s = $RefreshSig$();
+function RegistrationView(props) {
+    _s();
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [birthdate, setBirthdate] = useState('');
+    const validated = useState(null);
+    const handleSubmit = (e)=>{
+        e.preventDefault();
+        _axiosDefault.default.post('https://sam-superhero-movie-project.herokuapp.com/users', {
+            Username: username,
+            Password: password,
+            Email: email,
+            Birthdate: birthdate
+        }).then((response)=>{
+            const data = response.data;
+            console.log(data);
+            window.open('/', '_self');
+            alert("You have sucessfully registered.");
+        }).catch((error)=>{
+            if (error.response && error.response.status === 400) alert('The value you entered is not valid.');
+        });
+        console.log(username, password, email, birthdate);
+    };
+    return(/*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default, {
+        className: "RegForm",
+        onSubmit: handleSubmit,
+        noValidate: true,
+        validated: validated,
+        __source: {
+            fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
+            lineNumber: 39
+        },
+        __self: this
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
+        controlId: "formGroupUsername",
+        __source: {
+            fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
+            lineNumber: 40
+        },
+        __self: this
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
+        __source: {
+            fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
+            lineNumber: 41
+        },
+        __self: this
+    }, "Username"), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
+        type: "text",
+        placeholder: "Enter Username",
+        value: username,
+        autoComplete: "username",
+        onChange: (e)=>setUsername(e.target.value)
+        ,
+        pattern: "[a-zA-Z0-9]{5,}",
+        minLength: "5",
+        required: true,
+        __source: {
+            fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
+            lineNumber: 42
+        },
+        __self: this
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control.Feedback, {
+        type: "invalid",
+        __source: {
+            fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
+            lineNumber: 43
+        },
+        __self: this
+    }, "Please provide a valid username at least 5 characters long.")), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
+        controlId: "formGroupPassword",
+        __source: {
+            fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
+            lineNumber: 45
+        },
+        __self: this
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
+        __source: {
+            fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
+            lineNumber: 46
+        },
+        __self: this
+    }, "Password"), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
+        type: "password",
+        placeholder: "Enter Password",
+        value: password,
+        autoComplete: "password",
+        onChange: (e)=>setPassword(e.target.value)
+        ,
+        minLength: "5",
+        required: true,
+        __source: {
+            fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
+            lineNumber: 47
+        },
+        __self: this
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control.Feedback, {
+        type: "invalid",
+        __source: {
+            fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
+            lineNumber: 48
+        },
+        __self: this
+    }, "Please provide a valid password at least 5 characters long.")), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
+        controlId: "formGroupEmail",
+        __source: {
+            fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
+            lineNumber: 50
+        },
+        __self: this
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
+        __source: {
+            fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
+            lineNumber: 51
+        },
+        __self: this
+    }, "Email"), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
+        type: "email",
+        placeholder: "Enter Email",
+        value: email,
+        autoComplete: "email",
+        onChange: (e)=>setEmail(e.target.value)
+        ,
+        required: true,
+        __source: {
+            fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
+            lineNumber: 52
+        },
+        __self: this
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control.Feedback, {
+        type: "invalid",
+        __source: {
+            fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
+            lineNumber: 53
+        },
+        __self: this
+    }, "Please provide a valid email address.")), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
+        controlId: "formGroupBirthdate",
+        __source: {
+            fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
+            lineNumber: 55
+        },
+        __self: this
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
+        __source: {
+            fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
+            lineNumber: 56
+        },
+        __self: this
+    }, "Birthdate"), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
+        type: "date",
+        placeholder: "00-00-0000",
+        value: birthdate,
+        onChange: (e)=>setBirthdate(e.target.value)
+        ,
+        required: true,
+        __source: {
+            fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
+            lineNumber: 57
+        },
+        __self: this
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control.Feedback, {
+        type: "invalid",
+        __source: {
+            fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
+            lineNumber: 58
+        },
+        __self: this
+    }, "Please enter a valid birthday.")), /*#__PURE__*/ _reactDefault.default.createElement("span", {
+        __source: {
+            fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
+            lineNumber: 60
+        },
+        __self: this
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
+        type: "submit",
+        onClick: handleSubmit,
+        __source: {
+            fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
+            lineNumber: 61
+        },
+        __self: this
+    }, "Submit"), ' ', /*#__PURE__*/ _reactDefault.default.createElement(Link, {
+        to: "/",
+        __source: {
+            fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
+            lineNumber: 63
+        },
+        __self: this
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
+        variant: "secondary",
+        type: "button",
+        __source: {
+            fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
+            lineNumber: 64
+        },
+        __self: this
+    }, "Back")))));
+}
+_s(RegistrationView, "LsqjRVIojXumBfgnqFLvy9IWCkc=");
+_c = RegistrationView;
+RegistrationView.propTypes = {
+    register: _propTypesDefault.default.shape({
+        Username: _propTypesDefault.default.string.isRequired,
+        Password: _propTypesDefault.default.string.isRequired,
+        Email: _propTypesDefault.default.string.isRequired,
+        Birthdate: _propTypesDefault.default.string.isRequired
+    })
+};
+var _c;
+$RefreshReg$(_c, "RegistrationView");
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

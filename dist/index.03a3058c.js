@@ -28787,22 +28787,21 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
-var _registrationViewScss = require("./registration-view.scss");
 var _form = require("react-bootstrap/Form");
 var _formDefault = parcelHelpers.interopDefault(_form);
 var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _reactRouterDom = require("react-router-dom");
+var _registrationViewScss = require("./registration-view.scss");
 var _s = $RefreshSig$();
 function RegistrationView(props) {
     _s();
-    const [username, setUsername] = _react.useState('');
-    const [email, setEmail] = _react.useState('');
-    const [password, setPassword] = _react.useState('');
-    const [birthdate, setBirthdate] = _react.useState('');
-    const validated = _react.useState(null);
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [birthdate, setBirthdate] = useState('');
+    const validated = useState(null);
     const handleSubmit = (e)=>{
         e.preventDefault();
         _axiosDefault.default.post('https://sam-superhero-movie-project.herokuapp.com/users', {
@@ -28978,7 +28977,7 @@ function RegistrationView(props) {
             lineNumber: 61
         },
         __self: this
-    }, "Submit"), ' ', /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+    }, "Submit"), ' ', /*#__PURE__*/ _reactDefault.default.createElement(Link, {
         to: "/",
         __source: {
             fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
@@ -29013,7 +29012,7 @@ $RefreshReg$(_c, "RegistrationView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","axios":"7rA65","./registration-view.scss":"B5fua","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","prop-types":"4dfy5","react-router-dom":"1PMSK","@parcel/transformer-js/src/esmodule-helpers.js":"6kKZn","../../../../../../Users/Sam/AppData/Roaming/nvm/v14.16.1/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5vw4v"}],"B5fua":[function() {},{}],"3fzwD":[function(require,module,exports) {
+},{"react":"3b2NM","axios":"7rA65","./registration-view.scss":"B5fua","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","prop-types":"4dfy5","@parcel/transformer-js/src/esmodule-helpers.js":"6kKZn","../../../../../../Users/Sam/AppData/Roaming/nvm/v14.16.1/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5vw4v"}],"B5fua":[function() {},{}],"3fzwD":[function(require,module,exports) {
 "use strict";
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 exports.__esModule = true;

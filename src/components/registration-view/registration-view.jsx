@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import axios from 'axios';
-import './registration-view.scss';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import PropTypes from 'prop-types';
-import { Link } from "react-router-dom";
+
+import './registration-view.scss';
 
 export function RegistrationView(props) {
     const [username, setUsername] = useState('');
