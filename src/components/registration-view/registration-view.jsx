@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
+
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 
 import './registration-view.scss';
 
@@ -10,7 +12,7 @@ export function RegistrationView(props) {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [birthdate, setBirthdate] = useState('');
+    const [birthday, setBirthday] = useState('');
     const validated = useState(null);
 
     const handleSubmit = (e) => {
@@ -19,7 +21,7 @@ export function RegistrationView(props) {
             Username: username,
             Password: password,
             Email: email,
-            Birthdate: birthdate
+            Birthday: birthday
         })
             .then(response => {
                 const data = response.data;
@@ -32,7 +34,7 @@ export function RegistrationView(props) {
                     alert('The value you entered is not valid.')
                 }
             });
-        console.log(username, password, email, birthdate);
+        console.log(username, password, email, birthday);
     };
 
     return (
@@ -52,9 +54,9 @@ export function RegistrationView(props) {
                 <Form.Control type="email" placeholder="Enter Email" value={email} autoComplete="email" onChange={e => setEmail(e.target.value)} required />
                 <Form.Control.Feedback type="invalid">Please provide a valid email address.</Form.Control.Feedback>
             </Form.Group>
-            <Form.Group controlId="formGroupBirthdate">
-                <Form.Label>Birthdate</Form.Label>
-                <Form.Control type="date" placeholder="00-00-0000" value={birthdate} onChange={e => setBirthdate(e.target.value)} required />
+            <Form.Group controlId="formGroupBirthday">
+                <Form.Label>Birthday</Form.Label>
+                <Form.Control type="date" placeholder="00-00-0000" value={birthday} onChange={e => setBirthday(e.target.value)} required />
                 <Form.Control.Feedback type='invalid'>Please enter a valid birthday.</Form.Control.Feedback>
             </Form.Group>
             <span>
@@ -73,6 +75,6 @@ RegistrationView.propTypes = {
         Username: PropTypes.string.isRequired,
         Password: PropTypes.string.isRequired,
         Email: PropTypes.string.isRequired,
-        Birthdate: PropTypes.string.isRequired
+        Birthday: PropTypes.string.isRequired
     }),
 };
