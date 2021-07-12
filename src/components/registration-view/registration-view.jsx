@@ -1,27 +1,27 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+import { Form, Button, Container } from 'react-bootstrap';
+
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 
 import './registration-view.scss';
 
-export function RegistrationView(props) {
+export function RegisterView(props) {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [birthday, setBirthday] = useState('');
-    const validated = useState(null);
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [birthdate, setBirthdate] = useState('');
 
-    const handleSubmit = (e) => {
+    const handleRegister = (e) => {
         e.preventDefault();
         axios.post('https://sam-superhero-movie-project.herokuapp.com/users', {
             Username: username,
             Password: password,
             Email: email,
-            Birthday: birthday
+            Birthdate: birthdate
         })
             .then(response => {
                 const data = response.data;
@@ -34,43 +34,79 @@ export function RegistrationView(props) {
                     alert('The value you entered is not valid.')
                 }
             });
-        console.log(username, password, email, birthday);
+        console.log(username, password, email, birthdate);
     };
 
     return (
-        <Form className="RegForm" onSubmit={handleSubmit} noValidate validated={validated}>
-            <Form.Group controlId="formGroupUsername">
-                <Form.Label>Username</Form.Label>
-                <Form.Control type="text" placeholder="Enter Username" value={username} autoComplete="username" onChange={e => setUsername(e.target.value)} pattern='[a-zA-Z0-9]{5,}' minLength="5" required />
-                <Form.Control.Feedback type="invalid">Please provide a valid username at least 5 characters long.</Form.Control.Feedback>
-            </Form.Group>
-            <Form.Group controlId="formGroupPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Enter Password" value={password} autoComplete="password" onChange={e => setPassword(e.target.value)} minLength="5" required />
-                <Form.Control.Feedback type="invalid">Please provide a valid password at least 5 characters long.</Form.Control.Feedback>
-            </Form.Group>
-            <Form.Group controlId="formGroupEmail">
-                <Form.Label>Email</Form.Label>
-                <Form.Control type="email" placeholder="Enter Email" value={email} autoComplete="email" onChange={e => setEmail(e.target.value)} required />
-                <Form.Control.Feedback type="invalid">Please provide a valid email address.</Form.Control.Feedback>
-            </Form.Group>
-            <Form.Group controlId="formGroupBirthday">
-                <Form.Label>Birthday</Form.Label>
-                <Form.Control type="date" placeholder="00-00-0000" value={birthday} onChange={e => setBirthday(e.target.value)} required />
-                <Form.Control.Feedback type='invalid'>Please enter a valid birthday.</Form.Control.Feedback>
-            </Form.Group>
-            <span>
-                <Button type="submit" onClick={handleSubmit}>Submit</Button>
-                {' '}
-                <Link to="/">
-                    <Button variant="secondary" type="button">Back</Button>
+        <React.Fragment>
+            <Form className='register-form'>
+                <h1 className='register-header'>Welcome to myFlix!</h1>
+                <p className="register-header">
+                    Login in&nbsp;
+                    <Link to={`/login`}>here</Link>
+                </p>
+                <Form.Group controlId='formBasicText'>
+                    <Form.Label size='lg'>Username</Form.Label>
+                    <Form.Control
+                        type='text'
+                        size='lg'
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        placeholder='Enter usename'
+                    />
+                </Form.Group>
+                <Form.Group controlId='formBasicEmail'>
+                    <Form.Label size='lg'>Email</Form.Label>
+                    <Form.Control
+                        type='email'
+                        size='lg'
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder='Enter email'
+                    />
+                </Form.Group>
+                <Form.Group controlId='formBasicPassword'>
+                    <Form.Label size='lg'>Password</Form.Label>
+                    <Form.Control
+                        type='password'
+                        size='lg'
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder='Enter new password'
+                    />
+                </Form.Group>
+                <Form.Group controlId='formBasicConfirmPassword'>
+                    <Form.Label size='lg'>Confirm Password</Form.Label>
+                    <Form.Control
+                        type='password'
+                        size='lg'
+                        value={confirmPassword}
+                        onChange={(e) => setConfirmPassword(e.target.value)}
+                        placeholder='Confirm your password'
+                    />
+                </Form.Group>
+                <Form.Group controlId='formBasicDate'>
+                    <Form.Label size='lg'>Birthdate</Form.Label>
+                    <Form.Control
+                        type='date'
+                        size='lg'
+                        value={birthdate}
+                        onChange={(e) => setBirthdate(e.target.value)}
+                        placeholder='Enter your birthdate'
+                    />
+                </Form.Group>
+                <Button type='button' variant='success' onClick={handleRegister}>Submit</Button>
+                <br />
+                <Link to={`/login`}>
+                    <Button className='login-button' type='button' variant='dark'>
+                        Already Registered?
+                    </Button>
                 </Link>
-            </span>
-        </Form >
-    )
+            </Form>
+        </React.Fragment>
+    );
 }
-
-RegistrationView.propTypes = {
+RegisterView.propTypes = {
     register: PropTypes.shape({
         Username: PropTypes.string.isRequired,
         Password: PropTypes.string.isRequired,
