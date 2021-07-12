@@ -81,12 +81,13 @@ export class MainView extends React.Component {
         this.getMovies(authData.token);
     }
 
-    onLoggedOut() {
-        localStorage.removeItem('token');
-        localStorage.removeItem('user');
-        this.setState({
+    onLogout() {
+        this.setState(state => ({
             user: null
-        });
+        }));
+
+        localStorage.removeItem('user');
+        localStorage.removeItem('token');
     }
 
     onBackClick() {
@@ -99,7 +100,6 @@ export class MainView extends React.Component {
         const { movies, user, register } = this.state;
 
 
-        // if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
         if (!movies) return <div className="main-view" />;
 
 
