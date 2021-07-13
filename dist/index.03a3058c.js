@@ -22108,7 +22108,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
-            path: "/directors/:name",
+            path: "/director/:name",
             render: ({ match  })=>{
                 if (!movies.length) return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
                     className: "main-view"
@@ -22125,7 +22125,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
-            path: "/genres/:name",
+            path: "/genre/:name",
             render: ({ match  })=>{
                 if (!movies.length) return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
                     className: "main-view"
@@ -39189,44 +39189,36 @@ class MovieCard extends _reactDefault.default.Component {
                 lineNumber: 18
             },
             __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Img, {
-            variant: "top",
-            src: movie.ImagePath,
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Body, {
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\movie-card\\movie-card.jsx",
                 lineNumber: 19
             },
             __self: this
-        }), /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Body, {
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Title, {
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\movie-card\\movie-card.jsx",
                 lineNumber: 20
             },
             __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Title, {
+        }, movie.Name), /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Text, {
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\movie-card\\movie-card.jsx",
                 lineNumber: 21
             },
             __self: this
-        }, movie.Name), /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Text, {
+        }, movie.Description), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+            to: '/movies/${movie._id}',
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\movie-card\\movie-card.jsx",
                 lineNumber: 22
-            },
-            __self: this
-        }, movie.Description), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
-            to: '/movies/${movie._id',
-            __source: {
-                fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\movie-card\\movie-card.jsx",
-                lineNumber: 23
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
             variant: "link",
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\movie-card\\movie-card.jsx",
-                lineNumber: 24
+                lineNumber: 23
             },
             __self: this
         }, "Open")))));
@@ -39282,13 +39274,13 @@ class MovieView extends _reactDefault.default.Component {
         e.preventDefault();
         const token = localStorage.getItem('token');
         const user = localStorage.getItem('user');
-        _axiosDefault.default.post(`https://sam-superhero-movie-project.herokuapp.com/users/${user}/Movies/${this.props.movie._id}`, {
+        _axiosDefault.default.post(`https://sam-superhero-movie-project.herokuapp.com/users/${user}/movies/${this.props.movie._id}`, {
         }, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
         }).then((response)=>{
-            alert(`${this.props.movie.Title} added to Favorites List`);
+            alert(`${this.props.movie.Name} added to Favorites List`);
         }).catch(function(error) {
             console.log(error);
         });
@@ -39310,65 +39302,74 @@ class MovieView extends _reactDefault.default.Component {
                 lineNumber: 41
             },
             __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Title, {
-            className: "movie-title",
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Img, {
+            className: "movie-poster",
+            variant: "top",
+            src: movie.ImagePath,
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
                 lineNumber: 42
             },
             __self: this
-        }, movie.Name), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Body, {
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Title, {
+            className: "movie-title",
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
                 lineNumber: 43
+            },
+            __self: this
+        }, movie.Name), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Body, {
+            __source: {
+                fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
+                lineNumber: 44
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Text, {
             className: "movie-body",
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 44
+                lineNumber: 45
             },
             __self: this
         }, movie.Description), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Text, {
             className: "movie-body",
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 46
+                lineNumber: 47
             },
             __self: this
         }, "Director:", /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
-            to: `/directors/${movie.Director.Name}`,
+            to: `/director/${movie.Director.Name}`,
             style: {
                 textDecoration: 'none'
             },
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 48
+                lineNumber: 49
             },
             __self: this
         }, " ", movie.Director.Name)), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Text, {
             className: "movie-body",
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 51
+                lineNumber: 52
             },
             __self: this
         }, "Genre:", /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
-            to: `/genres/${movie.Genre.Name}`,
+            to: `/genre/${movie.Genre.Name}`,
             style: {
                 textDecoration: 'none'
             },
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 53
+                lineNumber: 54
             },
             __self: this
         }, " ", movie.Genre.Name)), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
             to: ``,
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 56
+                lineNumber: 57
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Button, {
@@ -39377,14 +39378,14 @@ class MovieView extends _reactDefault.default.Component {
             onClick: this.addFavorite,
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 57
+                lineNumber: 58
             },
             __self: this
         }, " Add Movie to Favorites"))), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
             to: `/`,
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 60
+                lineNumber: 61
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Button, {
@@ -39392,7 +39393,7 @@ class MovieView extends _reactDefault.default.Component {
             variant: "dark",
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 61
+                lineNumber: 62
             },
             __self: this
         }, "Return to Movie List")))));
@@ -39402,6 +39403,7 @@ MovieView.propTypes = {
     movie: _propTypesDefault.default.shape({
         Name: _propTypesDefault.default.string.isRequired,
         Description: _propTypesDefault.default.string,
+        ImagePath: _propTypesDefault.default.string,
         Genre: _propTypesDefault.default.shape({
             Name: _propTypesDefault.default.string,
             Description: _propTypesDefault.default.string
@@ -39435,98 +39437,158 @@ parcelHelpers.export(exports, "DirectorView", ()=>DirectorView
 );
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-var _button = require("react-bootstrap/Button");
-var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _reactRouterDom = require("react-router-dom");
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _movieCard = require("../movie-card/movie-card");
+var _reactBootstrap = require("react-bootstrap");
 var _directorViewScss = require("./director-view.scss");
 class DirectorView extends _reactDefault.default.Component {
+    constructor(){
+        super();
+        this.state = {
+        };
+    }
     render() {
-        const { directorData , onBackClick  } = this.props;
+        const { director , movies  } = this.props;
+        if (!director) return null;
         return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "director-view",
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 12
+                lineNumber: 28
             },
             __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Container, {
+            __source: {
+                fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
+                lineNumber: 29
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card, {
+            className: "director-card",
+            __source: {
+                fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
+                lineNumber: 30
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Body, {
+            __source: {
+                fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
+                lineNumber: 31
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Title, {
             className: "director-name",
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 13
+                lineNumber: 32
             },
             __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
-            className: "value",
+        }, director.Director.Name), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Text, {
+            className: "director-space",
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 14
+                lineNumber: 33
             },
             __self: this
-        }, director.Name)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
-            className: "director-birth",
-            __source: {
-                fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 16
-            },
-            __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
-            className: "label",
-            __source: {
-                fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 17
-            },
-            __self: this
-        }, "Birth: "), /*#__PURE__*/ _reactDefault.default.createElement("span", {
-            className: "value",
-            __source: {
-                fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 18
-            },
-            __self: this
-        }, director.Birth)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        }, "~"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Text, {
             className: "director-bio",
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 20
+                lineNumber: 34
             },
             __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
-            className: "label",
+        }, director.Director.Bio), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Text, {
+            className: "director-space",
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 21
+                lineNumber: 35
             },
             __self: this
-        }, "Bio: "), /*#__PURE__*/ _reactDefault.default.createElement("span", {
-            className: "value",
+        }, "~"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Text, {
+            className: "director-birth",
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 22
+                lineNumber: 36
             },
             __self: this
-        }, director.Bio)), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
-            variant: "secondary",
-            size: "sm",
-            onClick: ()=>{
-                onBackClick(null);
-            },
+        }, director.Director.Birth))), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card, {
+            className: "director-moreMovies",
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 24
+                lineNumber: 40
             },
             __self: this
-        }, "Back")));
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Body, {
+            __source: {
+                fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
+                lineNumber: 41
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Title, {
+            className: "director-movies",
+            __source: {
+                fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
+                lineNumber: 42
+            },
+            __self: this
+        }, "Movies by ", director.Director.Name, ":"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.ListGroup, {
+            __source: {
+                fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
+                lineNumber: 43
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "director-view-movies",
+            __source: {
+                fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
+                lineNumber: 44
+            },
+            __self: this
+        }, movies.map((movie)=>{
+            if (movie.Director.Name === director.Director.Name) return(/*#__PURE__*/ _reactDefault.default.createElement(_movieCard.MovieCard, {
+                key: movie._id,
+                movie: movie,
+                __source: {
+                    fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
+                    lineNumber: 47
+                },
+                __self: this
+            }));
+        }))))), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Footer, {
+            className: "director-footer",
+            __source: {
+                fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
+                lineNumber: 54
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+            to: `/`,
+            __source: {
+                fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
+                lineNumber: 55
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Button, {
+            className: "returnButton",
+            variant: "dark",
+            __source: {
+                fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
+                lineNumber: 56
+            },
+            __self: this
+        }, "Return to Movie List"))))));
     }
 }
 DirectorView.propTypes = {
-    director: _propTypesDefault.default.shape({
-        Name: _propTypesDefault.default.string.isRequired,
-        Bio: _propTypesDefault.default.string.isRequired,
-        Birth: _propTypesDefault.default.string.isRequired
-    }),
-    onBackClick: _propTypesDefault.default.func.isRequired
+    movie: _propTypesDefault.default.shape({
+        Director: _propTypesDefault.default.shape({
+            Name: _propTypesDefault.default.string.isRequired,
+            Bio: _propTypesDefault.default.string.isRequired,
+            Birth: _propTypesDefault.default.string.isRequired
+        })
+    })
 };
 
   helpers.postlude(module);
@@ -39534,7 +39596,7 @@ DirectorView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","react-bootstrap/Button":"1ru0l","prop-types":"4dfy5","./director-view.scss":"7kqLm","@parcel/transformer-js/src/esmodule-helpers.js":"6kKZn","../../../../../../Users/Sam/AppData/Roaming/nvm/v14.16.1/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5vw4v"}],"7kqLm":[function() {},{}],"3am9W":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","./director-view.scss":"7kqLm","@parcel/transformer-js/src/esmodule-helpers.js":"6kKZn","../../../../../../Users/Sam/AppData/Roaming/nvm/v14.16.1/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5vw4v","react-router-dom":"1PMSK","../movie-card/movie-card":"2KEXz","react-bootstrap":"4n7hB"}],"7kqLm":[function() {},{}],"3am9W":[function(require,module,exports) {
 var helpers = require("../../../../../../Users/Sam/AppData/Roaming/nvm/v14.16.1/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -39547,75 +39609,151 @@ parcelHelpers.export(exports, "GenreView", ()=>GenreView
 );
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-var _button = require("react-bootstrap/Button");
-var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _reactRouterDom = require("react-router-dom");
+var _movieCard = require("../movie-card/movie-card");
+var _reactBootstrap = require("react-bootstrap");
 var _genreViewScss = require("./genre-view.scss");
 class GenreView extends _reactDefault.default.Component {
+    constructor(){
+        super();
+        this.state = {
+        };
+    }
     render() {
-        const { genre , onBackClick  } = this.props;
+        const { genre , movies  } = this.props;
+        if (!genre) return null;
         return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "genre-view",
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\genre-view\\genre-view.jsx",
-                lineNumber: 10
+                lineNumber: 28
             },
             __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Container, {
+            __source: {
+                fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\genre-view\\genre-view.jsx",
+                lineNumber: 29
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card, {
+            className: "genre-card",
+            __source: {
+                fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\genre-view\\genre-view.jsx",
+                lineNumber: 30
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Body, {
+            __source: {
+                fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\genre-view\\genre-view.jsx",
+                lineNumber: 31
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Title, {
             className: "genre-name",
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\genre-view\\genre-view.jsx",
-                lineNumber: 11
+                lineNumber: 32
             },
             __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
-            className: "value",
+        }, genre.Genre.Name), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Text, {
+            className: "genre-space",
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\genre-view\\genre-view.jsx",
-                lineNumber: 12
+                lineNumber: 33
             },
             __self: this
-        }, genre.Name)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        }, "~"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Text, {
             className: "genre-description",
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\genre-view\\genre-view.jsx",
-                lineNumber: 14
+                lineNumber: 34
             },
             __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
-            className: "label",
+        }, genre.Genre.Description))), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card, {
+            className: "genre-moreMovies",
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\genre-view\\genre-view.jsx",
-                lineNumber: 15
+                lineNumber: 37
             },
             __self: this
-        }, "Description: "), /*#__PURE__*/ _reactDefault.default.createElement("span", {
-            className: "value",
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Body, {
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\genre-view\\genre-view.jsx",
-                lineNumber: 16
+                lineNumber: 38
             },
             __self: this
-        }, genre.Description)), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
-            variant: "secondary",
-            size: "sm",
-            onClick: ()=>{
-                onBackClick(null);
-            },
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Title, {
+            className: "genre-movies",
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\genre-view\\genre-view.jsx",
-                lineNumber: 18
+                lineNumber: 39
             },
             __self: this
-        }, "Back")));
+        }, genre.Genre.Name, " Movies:"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.ListGroup, {
+            __source: {
+                fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\genre-view\\genre-view.jsx",
+                lineNumber: 40
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "genre-view-movies",
+            __source: {
+                fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\genre-view\\genre-view.jsx",
+                lineNumber: 41
+            },
+            __self: this
+        }, movies.map((movie)=>{
+            if (movie.Genre.Name === genre.Genre.Name) return(/*#__PURE__*/ _reactDefault.default.createElement(_movieCard.MovieCard, {
+                key: movie._id,
+                movie: movie,
+                __source: {
+                    fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\genre-view\\genre-view.jsx",
+                    lineNumber: 44
+                },
+                __self: this
+            }));
+        }))))), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Footer, {
+            className: "director-footer",
+            __source: {
+                fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\genre-view\\genre-view.jsx",
+                lineNumber: 52
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+            to: `/`,
+            __source: {
+                fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\genre-view\\genre-view.jsx",
+                lineNumber: 53
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Button, {
+            className: "returnButton",
+            variant: "dark",
+            __source: {
+                fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\genre-view\\genre-view.jsx",
+                lineNumber: 54
+            },
+            __self: this
+        }, "Return to Movie List"))))));
     }
 }
+GenreView.propTypes = {
+    movie: _propTypesDefault.default.shape({
+        Genre: _propTypesDefault.default.shape({
+            Name: _propTypesDefault.default.string.isRequired,
+            Description: _propTypesDefault.default.string.isRequired
+        })
+    })
+};
 
   helpers.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","react-bootstrap/Button":"1ru0l","./genre-view.scss":"7o8Kx","@parcel/transformer-js/src/esmodule-helpers.js":"6kKZn","../../../../../../Users/Sam/AppData/Roaming/nvm/v14.16.1/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5vw4v"}],"7o8Kx":[function() {},{}],"42pj2":[function(require,module,exports) {
+},{"react":"3b2NM","./genre-view.scss":"7o8Kx","@parcel/transformer-js/src/esmodule-helpers.js":"6kKZn","../../../../../../Users/Sam/AppData/Roaming/nvm/v14.16.1/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5vw4v","prop-types":"4dfy5","react-router-dom":"1PMSK","../movie-card/movie-card":"2KEXz","react-bootstrap":"4n7hB"}],"7o8Kx":[function() {},{}],"42pj2":[function(require,module,exports) {
 var helpers = require("../../../../../../Users/Sam/AppData/Roaming/nvm/v14.16.1/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

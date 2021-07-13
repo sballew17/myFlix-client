@@ -1,37 +1,73 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
-import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import propTypes from 'prop-types';
+import { MovieCard } from '../movie-card/movie-card';
 
-import "./director-view.scss";
+import {
+    Card,
+    Button,
+    Container,
+    ListGroup,
+} from 'react-bootstrap';
+
+import './director-view.scss';
 
 export class DirectorView extends React.Component {
+    constructor() {
+        super();
+
+        this.state = {};
+    }
+
     render() {
-        const { directorData, onBackClick } = this.props;
+        const { director, movies } = this.props;
+
+        if (!director) return null;
 
         return (
-            <div className="director-view">
-                <div className="director-name">
-                    <span className="value">{director.Name}</span>
-                </div>
-                <div className="director-birth">
-                    <span className="label">Birth: </span>
-                    <span className="value">{director.Birth}</span>
-                </div>
-                <div className="director-bio">
-                    <span className="label">Bio: </span>
-                    <span className="value">{director.Bio}</span>
-                </div>
-                <Button variant="secondary" size="sm" onClick={() => { onBackClick(null); }}>Back</Button>
+            <div className='director-view'>
+                <Container>
+                    <Card className='director-card'>
+                        <Card.Body>
+                            <Card.Title className='director-name'>{director.Director.Name}</Card.Title>
+                            <Card.Text className='director-space'>~</Card.Text>
+                            <Card.Text className='director-bio'>{director.Director.Bio}</Card.Text>
+                            <Card.Text className='director-space'>~</Card.Text>
+                            <Card.Text className='director-birth'>{director.Director.Birth}</Card.Text>
+
+                        </Card.Body>
+                    </Card>
+                    <Card className='director-moreMovies'>
+                        <Card.Body>
+                            <Card.Title className='director-movies'>Movies by {director.Director.Name}:</Card.Title>
+                            <ListGroup>
+                                <div className='director-view-movies'>
+                                    {movies.map((movie) => {
+                                        if (movie.Director.Name === director.Director.Name) {
+                                            return (<MovieCard key={movie._id} movie={movie} />)
+                                        }
+                                    })}
+                                </div>
+                            </ListGroup>
+                        </Card.Body>
+                    </Card>
+                    <Card.Footer className='director-footer'>
+                        <Link to={`/`}>
+                            <Button className='returnButton' variant='dark'>Return to Movie List</Button>
+                        </Link>
+                    </Card.Footer>
+                </Container>
             </div>
-        );
+        )
     }
 }
 
 DirectorView.propTypes = {
-    director: PropTypes.shape({
-        Name: PropTypes.string.isRequired,
-        Bio: PropTypes.string.isRequired,
-        Birth: PropTypes.string.isRequired
-    }),
-    onBackClick: PropTypes.func.isRequired
+    movie: propTypes.shape({
+        Director: propTypes.shape({
+            Name: propTypes.string.isRequired,
+            Bio: propTypes.string.isRequired,
+            Birth: propTypes.string.isRequired
+        })
+    })
 };

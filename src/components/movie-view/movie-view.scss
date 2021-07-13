@@ -1,0 +1,33 @@
+.movie-view {
+    margin: 0px 100px;
+  }
+  
+  .movie-view-card{
+    border: none;
+  }
+  
+  .movie-poster {
+    width: 20%;
+    margin: 20px auto;
+  }
+  
+  .movie-title {
+    font-size: 4em;
+    text-align: center;
+  }
+  
+  .movie-body, .movie-info {
+    font-size: 1.5em;
+  }
+  
+  .back-button {
+    margin: auto;
+    margin-bottom: 20px;
+  }
+  
+  .addFavButton{
+    margin: 0;
+    position: relative;
+    top: 50%;
+    left: 50%;
+  }

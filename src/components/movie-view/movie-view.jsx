@@ -20,11 +20,11 @@ export class MovieView extends React.Component {
         const token = localStorage.getItem('token');
         const user = localStorage.getItem('user');
 
-        axios.post(`https://sam-superhero-movie-project.herokuapp.com/users/${user}/Movies/${this.props.movie._id}`, {}, {
+        axios.post(`https://sam-superhero-movie-project.herokuapp.com/users/${user}/movies/${this.props.movie._id}`, {}, {
             headers: { Authorization: `Bearer ${token}` }
         })
             .then(response => {
-                alert(`${this.props.movie.Title} added to Favorites List`)
+                alert(`${this.props.movie.Name} added to Favorites List`)
             })
             .catch(function (error) {
                 console.log(error);
@@ -39,18 +39,19 @@ export class MovieView extends React.Component {
         return (
             <div className="movie-view">
                 <Card className='movie-view-card'>
+                    <Card.Img className='movie-poster' variant="top" src={movie.ImagePath} />
                     <Card.Title className='movie-title'>{movie.Name}</Card.Title>
                     <Card.Body>
                         <Card.Text className='movie-body'>{movie.Description}</Card.Text>
 
                         <Card.Text className='movie-body'>
                             Director:
-                            <Link to={`/directors/${movie.Director.Name}`} style={{ textDecoration: 'none' }}> {movie.Director.Name}</Link>
+                            <Link to={`/director/${movie.Director.Name}`} style={{ textDecoration: 'none' }}> {movie.Director.Name}</Link>
                         </Card.Text>
 
                         <Card.Text className='movie-body'>
                             Genre:
-                            <Link to={`/genres/${movie.Genre.Name}`} style={{ textDecoration: 'none' }}> {movie.Genre.Name}</Link>
+                            <Link to={`/genre/${movie.Genre.Name}`} style={{ textDecoration: 'none' }}> {movie.Genre.Name}</Link>
                         </Card.Text>
 
                         <Link to={``}>
@@ -70,6 +71,7 @@ MovieView.propTypes = {
     movie: PropTypes.shape({
         Name: PropTypes.string.isRequired,
         Description: PropTypes.string,
+        ImagePath: PropTypes.string,
         Genre: PropTypes.shape({
             Name: PropTypes.string,
             Description: PropTypes.string
@@ -83,5 +85,4 @@ MovieView.propTypes = {
     user: PropTypes.shape({
         username: PropTypes.string
     })
-
 };
