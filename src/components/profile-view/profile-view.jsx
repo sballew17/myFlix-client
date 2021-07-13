@@ -55,8 +55,7 @@ export class ProfileView extends React.Component {
             });
     }
 
-    handleRemoveFavorite(e, movie) {
-        e.preventDefault();
+    handleRemoveFavorite(id, movie) {
         const username = localStorage.getItem('user');
         const token = localStorage.getItem('token');
 
@@ -98,7 +97,7 @@ export class ProfileView extends React.Component {
                                                         <Link to={`/movies/${movie._id}`}>
                                                             <Card.Img className='movie-card' variant="top" src={movie.ImagePath} />
                                                         </Link>
-                                                        <Card.Title className='movie-card-title'>{movie.Title}</Card.Title>
+                                                        <Card.Title className='movie-card-title'>{movie.Name}</Card.Title>
                                                         <Card.Body className='movie-card-body'>
                                                             <Button size='sm' className='profile-button remove-favorite' variant='danger' onClick={(e) => this.handleRemoveFavorite(e, movie._id)}>
                                                                 Remove

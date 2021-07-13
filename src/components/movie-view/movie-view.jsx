@@ -16,8 +16,7 @@ export class MovieView extends React.Component {
         this.state = {};
     }
 
-    addFavorite = (e) => {
-        e.preventDefault();
+    addFavorite(id) {
         const token = localStorage.getItem('token');
         const user = localStorage.getItem('user');
 
@@ -56,7 +55,7 @@ export class MovieView extends React.Component {
                         </Card.Text>
 
                         <Link to={``}>
-                            <Button className='addFavButton' variant='success' onClick={this.addFavorite}> Add Movie to Favorites</Button>
+                            <Button className='addFavButton' variant='success' onClick={this.addFavorite(movie._id)}> Add Movie to Favorites</Button>
                         </Link>
                     </Card.Body>
                     <Link to={`/`}>
@@ -73,7 +72,7 @@ MovieView.propTypes = {
     movie: PropTypes.shape({
         Name: PropTypes.string.isRequired,
         Description: PropTypes.string,
-        ImagePath: PropTypes.string.isRequired,
+        ImagePath: PropTypes.string,
         Genre: PropTypes.shape({
             Name: PropTypes.string,
             Description: PropTypes.string

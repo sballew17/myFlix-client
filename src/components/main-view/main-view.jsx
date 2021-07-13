@@ -99,10 +99,6 @@ export class MainView extends React.Component {
     render() {
         const { movies, user, register } = this.state;
 
-
-        if (!movies) return <div className="main-view" />;
-
-
         return (
             <Router>
                 <div className="main-view">
