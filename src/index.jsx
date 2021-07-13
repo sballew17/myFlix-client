@@ -1,13 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-<<<<<<< Updated upstream
-=======
-import Container from 'react-bootstarp/Container';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-import moviesApp from './reducers/reducers';
-
->>>>>>> Stashed changes
 import MainView from './components/main-view/main-view';
 
 // Import statement to indicate that you need to bundle `./index.scss`
