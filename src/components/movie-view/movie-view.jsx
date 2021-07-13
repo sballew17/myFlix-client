@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 
+
 import { Card, Button } from 'react-bootstrap';
 
 import axios from 'axios';
@@ -68,10 +69,11 @@ export class MovieView extends React.Component {
 }
 
 MovieView.propTypes = {
+
     movie: PropTypes.shape({
         Name: PropTypes.string.isRequired,
         Description: PropTypes.string,
-        ImagePath: PropTypes.string,
+        ImagePath: PropTypes.string.isRequired,
         Genre: PropTypes.shape({
             Name: PropTypes.string,
             Description: PropTypes.string
@@ -83,6 +85,11 @@ MovieView.propTypes = {
         Featured: PropTypes.bool
     }),
     user: PropTypes.shape({
+        FavoriteMovies: PropTypes.arrayOf(
+            PropTypes.shape({
+                _id: PropTypes.string
+            })
+        ),
         username: PropTypes.string
     })
 };
