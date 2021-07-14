@@ -24612,20 +24612,20 @@ class MainView extends _reactDefault.default.Component {
         return(/*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.BrowserRouter, {
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 106
+                lineNumber: 104
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "main-view",
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 107
+                lineNumber: 105
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("header", {
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 109
+                lineNumber: 107
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Navbar, {
@@ -24635,7 +24635,7 @@ class MainView extends _reactDefault.default.Component {
             variant: "dark",
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 110
+                lineNumber: 108
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Navbar.Brand, {
@@ -24645,28 +24645,28 @@ class MainView extends _reactDefault.default.Component {
             target: "_self",
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 111
+                lineNumber: 109
             },
             __self: this
         }, "myFlix"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Navbar.Toggle, {
             "aria-controls": "basic-navbar-nav",
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 112
+                lineNumber: 110
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Navbar.Collapse, {
             id: "basic-navbar-nav",
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 113
+                lineNumber: 111
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Nav, {
             className: "mr-auto",
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 114
+                lineNumber: 112
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Nav.Link, {
@@ -24676,7 +24676,7 @@ class MainView extends _reactDefault.default.Component {
             target: "_self",
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 115
+                lineNumber: 113
             },
             __self: this
         }, "Home"), user && /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Nav.Link, {
@@ -24686,21 +24686,21 @@ class MainView extends _reactDefault.default.Component {
             target: "_self",
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 117
+                lineNumber: 115
             },
             __self: this
         }, "Profile")), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form, {
             inline: true,
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 120
+                lineNumber: 118
             },
             __self: this
         }, user && /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
             to: `/`,
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 122
+                lineNumber: 120
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Button, {
@@ -24710,7 +24710,7 @@ class MainView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 123
+                lineNumber: 121
             },
             __self: this
         }, "Logout")))))), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -24727,7 +24727,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 131
+                lineNumber: 129
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -24744,7 +24744,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 137
+                lineNumber: 135
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -24756,7 +24756,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 144
+                lineNumber: 142
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -24768,7 +24768,7 @@ class MainView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 148
+                lineNumber: 146
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -24785,7 +24785,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 149
+                lineNumber: 147
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -24802,7 +24802,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 154
+                lineNumber: 152
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -24820,7 +24820,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "C:\\Documents\\myFlix-client\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 159
+                lineNumber: 157
             },
             __self: this
         }))));

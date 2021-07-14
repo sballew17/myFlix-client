@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import { setMovies } from '../../actions/actions';
 import MoviesList from '../movies-list/movies-list';
 import { setMovies, setUsers } from '../../actions/actions';
@@ -18,9 +18,7 @@ import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
 import { ProfileView } from '../profile-view/profile-view';
 
-import {
-    Navbar, Nav, Container, Row, Col, Form, Jumbotron, NavDropdown, Button, Card
-} from 'react-bootstrap';
+import { Navbar, Nav, Container, Row, Col, Form, Jumbotron, NavDropdown, Button, Card } from 'react-bootstrap';
 
 import './main-view.scss';
 
