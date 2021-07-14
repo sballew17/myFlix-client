@@ -30,7 +30,11 @@ class MainView extends React.Component {
         this.state = {
             movies: [],
             selectedMovie: "",
+<<<<<<< Updated upstream
             user: null
+=======
+            user: ""
+>>>>>>> Stashed changes
         }
     }
 
@@ -72,6 +76,7 @@ class MainView extends React.Component {
         });
     }
 
+<<<<<<< Updated upstream
     onLoggedIn(authData) {
         console.log(authData);
         this.setState({
@@ -97,6 +102,12 @@ class MainView extends React.Component {
             selectedMovie: null
         });
     }
+=======
+    render() {
+        let { movies } = this.props;
+        let { user, register } = this.state;
+        // if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+>>>>>>> Stashed changes
 
     render() {
         let { movies } = this.props;
