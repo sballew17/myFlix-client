@@ -5,9 +5,11 @@ import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import { setMovies } from '../../actions/actions';
 import MoviesList from '../movies-list/movies-list';
+import { setMovies, setUsers } from '../../actions/actions';
 
 import { Link } from "react-router-dom";
 
+import MoviesList from '../movies-list/movies-list';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { LoginView } from '../login-view/login-view';
@@ -17,11 +19,7 @@ import { GenreView } from '../genre-view/genre-view';
 import { ProfileView } from '../profile-view/profile-view';
 
 import {
-    Navbar,
-    Nav,
-    Form,
-    Button
-
+    Navbar, Nav, Container, Row, Col, Form, Jumbotron, NavDropdown, Button, Card
 } from 'react-bootstrap';
 
 import './main-view.scss';
@@ -30,6 +28,8 @@ class MainView extends React.Component {
     constructor() {
         super();
         this.state = {
+            movies: [],
+            selectedMovie: "",
             user: null
         }
     }
@@ -100,7 +100,7 @@ class MainView extends React.Component {
 
     render() {
         let { movies } = this.props;
-        let { user } = this.state;
+        let { user, register } = this.state;
 
         return (
             <Router>
