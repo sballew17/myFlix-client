@@ -28,7 +28,7 @@ class MainView extends React.Component {
         this.state = {
             movies: [],
             selectedMovie: "",
-            user: null
+            user: ""
         }
     }
 
