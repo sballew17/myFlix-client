@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import { setMovies } from '../../actions/actions';
 import MoviesList from '../movies-list/movies-list';
-import { setMovies, setUsers } from '../../actions/actions';
 
 import { Link } from "react-router-dom";
 
@@ -28,7 +27,7 @@ class MainView extends React.Component {
         this.state = {
             movies: [],
             selectedMovie: "",
-            user: ""
+            user: null
         }
     }
 
