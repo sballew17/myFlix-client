@@ -32,7 +32,7 @@
         "redux-devtools-extension": "^2.13.9"
     },
     "devDependencies": {
-        "@parcel/transformer-sass": "^2.0.0-nightly.771"
+        "@parcel/transformer-sass": "latest"
     },
     "type": "module"
 }
