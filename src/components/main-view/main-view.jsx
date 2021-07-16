@@ -8,7 +8,7 @@ import MoviesList from '../movies-list/movies-list';
 
 import { Link } from "react-router-dom";
 
-import MoviesList from '../movies-list/movies-list';
+
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { LoginView } from '../login-view/login-view';
