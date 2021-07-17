@@ -28604,7 +28604,7 @@ const mapStateToProps = (state)=>{
 function MoviesList(props) {
     const { movies , visibilityFilter  } = props;
     let filteredMovies = movies;
-    if (visibilityFilter !== '') filteredMovies = movies.filter((m)=>m.Name.includes(visibilityFilter)
+    if (visibilityFilter !== '') filteredMovies = movies.filter((m)=>m.Title.includes(visibilityFilter)
     );
     if (!movies) return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
         className: "main-view",
@@ -42240,4 +42240,4 @@ exports.default = moviesApp;
 
 },{"redux":"7panR","../actions/actions":"5S6cN","@parcel/transformer-js/src/esmodule-helpers.js":"6kKZn"}],"5OqXI":[function() {},{}]},["1j6wU","5jWZF","7Cwbd"], "7Cwbd", "parcelRequire279c")
 
-//# sourceMappingURL=index.03a3058c.js.map
+//# sourceMappingURL=index.HASH_REF_670ea00ccb85e81929d4760603a3058c.js.map
